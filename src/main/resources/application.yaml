@@ -1,1 +1,10 @@
-spring.application.name=hotel-reservation
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hotel_db
+    username: postgres_user
+    password: postgres_password
+    driver-class-name: org.postgresql.Driver
+
+  liquibase:
+    enabled: on
+    change-log: classpath:/db/changelog/db.changelog-master.xml
