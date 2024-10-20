@@ -26,18 +26,18 @@ public class HotelService {
     }
 
     public HotelListResponse getAllHotels() {
-        return HotelMapper.INSTANCE.toListResponse(hotelRepository.findAll());
+        return HotelMapper.INSTANCE.hotelListToHotelListResponse(hotelRepository.findAll());
     }
 
     public HotelResponse createHotel(UpsertHotelRequest request) {
         Hotel hotel = HotelMapper.INSTANCE.toEntity(request);
-        return HotelMapper.INSTANCE.toResponse(hotel);
+        return HotelMapper.INSTANCE.toResponse(hotelRepository.save(hotel));
     }
 
     public HotelResponse updateHotel(Long id, UpsertHotelRequest request) {
         Hotel hotel = getHotelById(id);
         HotelMapper.INSTANCE.updateHotelFromDto(request, hotel);
-        return HotelMapper.INSTANCE.toResponse(hotel);
+        return HotelMapper.INSTANCE.toResponse(hotelRepository.save(hotel));
     }
 
     public void deleteHotel(Long id) {

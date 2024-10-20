@@ -23,11 +23,17 @@ public interface HotelMapper {
     Hotel toEntity(UpsertHotelRequest request);
 
     @Mapping(target = "hotels", source = "hotels")
-    HotelListResponse toListResponse(List<Hotel> hotels);
+    List<HotelResponse> toListResponse(List<Hotel> hotels);
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "ranking", ignore = true)
     @Mapping(target = "count", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     void updateHotelFromDto(UpsertHotelRequest request, @MappingTarget Hotel hotel);
+
+    default HotelListResponse hotelListToHotelListResponse(List<Hotel> hotels) {
+        HotelListResponse response = new HotelListResponse();
+        response.setHotels(toListResponse(hotels));
+        return response;
+    }
 }

@@ -6,6 +6,7 @@ import com.fallt.hotel_reservation.dto.UpsertHotelRequest;
 import com.fallt.hotel_reservation.service.HotelService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -26,6 +27,7 @@ public class HotelController {
     }
 
     @PostMapping("/create")
+    @ResponseStatus(HttpStatus.CREATED)
     public HotelResponse createHotel(@RequestBody @Valid UpsertHotelRequest request) {
         return hotelService.createHotel(request);
     }
@@ -39,6 +41,4 @@ public class HotelController {
     public void deleteHotel(@PathVariable Long id) {
         hotelService.deleteHotel(id);
     }
-
-
 }
