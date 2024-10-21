@@ -13,13 +13,24 @@ public class ExceptionHandlerController {
 
 
     @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity<ExceptionResponse> handleEntityNotFoundEx(Exception e) {
+    public ResponseEntity<ExceptionResponse> handleEntityNotFoundException(Exception e) {
         ExceptionResponse body = ExceptionResponse.builder()
                 .error("NOT FOUND")
                 .timestamp(System.currentTimeMillis())
                 .errorDescription(e.getMessage())
                 .build();
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(body);
+    }
+
+    @ExceptionHandler(AlreadyExistException.class)
+    public ResponseEntity<ExceptionResponse> handleAlreadyExistException(Exception e) {
+        ExceptionResponse body = ExceptionResponse.builder()
+                .error("BAD REQUEST")
+                .timestamp(System.currentTimeMillis())
+                .errorDescription(e.getMessage())
+                .build();
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(body);
     }
 

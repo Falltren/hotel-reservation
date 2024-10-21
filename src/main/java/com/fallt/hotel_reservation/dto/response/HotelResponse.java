@@ -1,4 +1,4 @@
-package com.fallt.hotel_reservation.dto;
+package com.fallt.hotel_reservation.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;

@@ -1,4 +1,4 @@
-package com.fallt.hotel_reservation.dto;
+package com.fallt.hotel_reservation.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,5 +14,6 @@ import java.util.List;
 @Builder
 public class HotelListResponse {
 
+    @Builder.Default
     private List<HotelResponse> hotels = new ArrayList<>();
 }

@@ -1,8 +1,8 @@
 package com.fallt.hotel_reservation.mapper;
 
-import com.fallt.hotel_reservation.dto.HotelListResponse;
-import com.fallt.hotel_reservation.dto.HotelResponse;
-import com.fallt.hotel_reservation.dto.UpsertHotelRequest;
+import com.fallt.hotel_reservation.dto.response.HotelListResponse;
+import com.fallt.hotel_reservation.dto.response.HotelResponse;
+import com.fallt.hotel_reservation.dto.request.UpsertHotelRequest;
 import com.fallt.hotel_reservation.entity.Hotel;
 import org.mapstruct.*;
 
