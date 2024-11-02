@@ -32,3 +32,11 @@ CREATE TABLE IF NOT EXISTS users (
     email varchar(255),
     role varchar(255)
 );
+
+CREATE TABLE IF NOT EXISTS bookings (
+    id bigserial primary key,
+    arrival_date timestamp(6) without time zone,
+    departure_date timestamp(6) without time zone,
+    room_id bigint references rooms(id),
+    user_id bigint references users(id)
+);

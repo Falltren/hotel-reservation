@@ -38,7 +38,7 @@ public class RoomService {
         roomRepository.deleteById(id);
     }
 
-    private Room getRoom(Long id) {
+    public Room getRoom(Long id) {
         Optional<Room> optionalRoom = roomRepository.findById(id);
         if (optionalRoom.isEmpty()) {
             throw new EntityNotFoundException(MessageFormat.format("Room with ID: {0} not found", id));

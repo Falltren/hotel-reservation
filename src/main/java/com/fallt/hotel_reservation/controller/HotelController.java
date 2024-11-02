@@ -1,8 +1,8 @@
 package com.fallt.hotel_reservation.controller;
 
+import com.fallt.hotel_reservation.dto.request.UpsertHotelRequest;
 import com.fallt.hotel_reservation.dto.response.HotelListResponse;
 import com.fallt.hotel_reservation.dto.response.HotelResponse;
-import com.fallt.hotel_reservation.dto.request.UpsertHotelRequest;
 import com.fallt.hotel_reservation.service.HotelService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -38,6 +38,7 @@ public class HotelController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteHotel(@PathVariable Long id) {
         hotelService.deleteHotel(id);
     }

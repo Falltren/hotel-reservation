@@ -1,5 +1,6 @@
 package com.fallt.hotel_reservation.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,5 +20,6 @@ public class RoomResponse {
 
     private Double price;
 
+    @JsonProperty("max_people_count")
     private Integer maxPeopleCount;
 }
