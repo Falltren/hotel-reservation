@@ -15,9 +15,9 @@ public interface BookingMapper {
 
     BookingMapper INSTANCE = getMapper(BookingMapper.class);
 
-    @Mapping(target = "city", source = "room.getHotel().getCity()")
-    @Mapping(target = "hotelName", source = "room.getHotel().getName()")
-    @Mapping(target = "roomNumber", source = "room.getNumber()")
+    @Mapping(target = "city", source = "room.hotel.city")
+    @Mapping(target = "hotelName", source = "room.hotel.name")
+    @Mapping(target = "roomNumber", source = "room.number")
     BookingResponse toResponse(Booking booking);
 
     @Mapping(target = "id", ignore = true)

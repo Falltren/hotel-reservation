@@ -7,6 +7,7 @@ import com.fallt.hotel_reservation.entity.Room;
 import com.fallt.hotel_reservation.entity.User;
 import com.fallt.hotel_reservation.mapper.BookingMapper;
 import com.fallt.hotel_reservation.repository.BookingRepository;
+import com.fallt.hotel_reservation.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +24,8 @@ public class BookingService {
 
     private final RoomService roomService;
 
+    private final UserRepository userRepository;
+
     public List<BookingResponse> getAllBookings() {
         return BookingMapper.INSTANCE.toListResponse(bookingRepository.findAll());
     }
@@ -31,7 +34,7 @@ public class BookingService {
     public BookingResponse createBooking(BookingRequest request) {
         Booking booking = BookingMapper.INSTANCE.toEntity(request);
         Room room = roomService.getRoom(request.getRoomId());
-        User user = new User(); // будет заменено на получение пользователя из контекста безопасности при добавлении Spring Security
+        User user = userRepository.getById(1L); // будет заменено на получение пользователя из контекста безопасности при добавлении Spring Security
         booking.setUser(user);
         booking.setRoom(room);
         unavailableDateService.addUnavailableDate(booking);

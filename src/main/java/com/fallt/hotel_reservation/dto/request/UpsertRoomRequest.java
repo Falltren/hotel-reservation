@@ -28,9 +28,6 @@ public class UpsertRoomRequest {
     @Positive(message = "People count must be positive")
     private Integer maxPeopleCount;
 
-    @NotBlank(message = "Hotel name must not be empty")
-    private String hotelName;
-
-    @NotBlank(message = "Hotel name must not be empty")
-    private String hotelAddress;
+    @Positive(message = "Hotel id must be positive")
+    private Long hotelId;
 }
