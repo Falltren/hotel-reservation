@@ -1,6 +1,6 @@
-package com.fallt.hotel_reservation.dto.request;
+package com.fallt.hotel_reservation.domain.dto.request;
 
-import com.fallt.hotel_reservation.entity.Role;
+import com.fallt.hotel_reservation.domain.entity.enums.Role;
 import com.fallt.hotel_reservation.validation.RoleValidation;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

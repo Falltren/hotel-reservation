@@ -1,4 +1,4 @@
-package com.fallt.hotel_reservation.entity;
+package com.fallt.hotel_reservation.domain.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,30 +8,37 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDate;
 
 @Entity
 @Setter
 @Getter
 @NoArgsConstructor
-@Table(name = "rooms")
-public class Room {
+@AllArgsConstructor
+@Table(name = "bookings")
+public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String description;
-    private Integer number;
-    private Double price;
-
-    @Column(name = "max_people_count")
-    private Integer maxPeopleCount;
 
     @ManyToOne
-    @JoinColumn(name = "hotel_id")
-    private Hotel hotel;
+    @JoinColumn(name = "room_id")
+    private Room room;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @Column(name = "arrival_date")
+    private LocalDate arrivalDate;
+
+    @Column(name = "departure_date")
+    private LocalDate departureDate;
 
 }

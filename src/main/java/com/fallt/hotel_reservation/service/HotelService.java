@@ -1,9 +1,9 @@
 package com.fallt.hotel_reservation.service;
 
-import com.fallt.hotel_reservation.dto.request.UpsertHotelRequest;
-import com.fallt.hotel_reservation.dto.response.HotelListResponse;
-import com.fallt.hotel_reservation.dto.response.HotelResponse;
-import com.fallt.hotel_reservation.entity.Hotel;
+import com.fallt.hotel_reservation.domain.dto.request.UpsertHotelRequest;
+import com.fallt.hotel_reservation.domain.dto.response.HotelListResponse;
+import com.fallt.hotel_reservation.domain.dto.response.HotelResponse;
+import com.fallt.hotel_reservation.domain.entity.Hotel;
 import com.fallt.hotel_reservation.exception.EntityNotFoundException;
 import com.fallt.hotel_reservation.mapper.HotelMapper;
 import com.fallt.hotel_reservation.repository.HotelRepository;

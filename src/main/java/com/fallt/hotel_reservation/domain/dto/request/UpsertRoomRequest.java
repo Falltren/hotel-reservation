@@ -1,4 +1,4 @@
-package com.fallt.hotel_reservation.dto.request;
+package com.fallt.hotel_reservation.domain.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;

@@ -1,4 +1,4 @@
-package com.fallt.hotel_reservation.entity;
+package com.fallt.hotel_reservation.domain.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

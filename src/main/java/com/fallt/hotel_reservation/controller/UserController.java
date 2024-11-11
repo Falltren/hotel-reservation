@@ -1,7 +1,7 @@
 package com.fallt.hotel_reservation.controller;
 
-import com.fallt.hotel_reservation.dto.request.UpsertUserRequest;
-import com.fallt.hotel_reservation.dto.response.UserResponse;
+import com.fallt.hotel_reservation.domain.dto.request.UpsertUserRequest;
+import com.fallt.hotel_reservation.domain.dto.response.UserResponse;
 import com.fallt.hotel_reservation.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

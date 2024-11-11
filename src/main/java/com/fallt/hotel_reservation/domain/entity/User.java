@@ -1,11 +1,13 @@
-package com.fallt.hotel_reservation.entity;
+package com.fallt.hotel_reservation.domain.entity;
 
+import com.fallt.hotel_reservation.domain.entity.enums.Role;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,19 +16,17 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "hotels")
-public class Hotel {
+@Table(name = "users")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String title;
-    private String city;
-    private String address;
-    private Integer distance;
-    private Float ranking;
-    private Integer count;
+    private String password;
+    private String email;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
 }

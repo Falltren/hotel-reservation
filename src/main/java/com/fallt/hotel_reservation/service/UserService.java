@@ -1,8 +1,8 @@
 package com.fallt.hotel_reservation.service;
 
-import com.fallt.hotel_reservation.dto.request.UpsertUserRequest;
-import com.fallt.hotel_reservation.dto.response.UserResponse;
-import com.fallt.hotel_reservation.entity.User;
+import com.fallt.hotel_reservation.domain.dto.request.UpsertUserRequest;
+import com.fallt.hotel_reservation.domain.dto.response.UserResponse;
+import com.fallt.hotel_reservation.domain.entity.User;
 import com.fallt.hotel_reservation.exception.AlreadyExistException;
 import com.fallt.hotel_reservation.exception.EntityNotFoundException;
 import com.fallt.hotel_reservation.mapper.UserMapper;

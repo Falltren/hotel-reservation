@@ -1,4 +1,4 @@
-package com.fallt.hotel_reservation.dto.response;
+package com.fallt.hotel_reservation.domain.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

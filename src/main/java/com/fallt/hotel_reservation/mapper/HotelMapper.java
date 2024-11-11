@@ -1,9 +1,9 @@
 package com.fallt.hotel_reservation.mapper;
 
-import com.fallt.hotel_reservation.dto.response.HotelListResponse;
-import com.fallt.hotel_reservation.dto.response.HotelResponse;
-import com.fallt.hotel_reservation.dto.request.UpsertHotelRequest;
-import com.fallt.hotel_reservation.entity.Hotel;
+import com.fallt.hotel_reservation.domain.dto.response.HotelListResponse;
+import com.fallt.hotel_reservation.domain.dto.response.HotelResponse;
+import com.fallt.hotel_reservation.domain.dto.request.UpsertHotelRequest;
+import com.fallt.hotel_reservation.domain.entity.Hotel;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

@@ -1,7 +1,7 @@
 package com.fallt.hotel_reservation.service;
 
-import com.fallt.hotel_reservation.entity.Booking;
-import com.fallt.hotel_reservation.entity.UnavailableDate;
+import com.fallt.hotel_reservation.domain.entity.Booking;
+import com.fallt.hotel_reservation.domain.entity.UnavailableDate;
 import com.fallt.hotel_reservation.repository.UnavailableDateRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

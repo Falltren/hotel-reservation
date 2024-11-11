@@ -1,7 +1,7 @@
 package com.fallt.hotel_reservation.controller;
 
-import com.fallt.hotel_reservation.dto.request.BookingRequest;
-import com.fallt.hotel_reservation.dto.response.BookingResponse;
+import com.fallt.hotel_reservation.domain.dto.request.BookingRequest;
+import com.fallt.hotel_reservation.domain.dto.response.BookingResponse;
 import com.fallt.hotel_reservation.service.BookingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
