@@ -22,7 +22,7 @@ public class RoleValidator implements ConstraintValidator<RoleValidation, CharSe
         if (value == null) {
             return true;
         }
-
         return acceptedValues.contains(value.toString());
     }
+
 }

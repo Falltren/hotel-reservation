@@ -14,11 +14,10 @@ import lombok.NoArgsConstructor;
 public class UpsertUserRequest {
 
     private String name;
-
     private String password;
-
     private String email;
 
     @RoleValidation(enumClass = Role.class)
     private String role;
+
 }

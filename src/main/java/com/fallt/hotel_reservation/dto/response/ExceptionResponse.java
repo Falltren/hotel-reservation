@@ -1,4 +1,4 @@
-package com.fallt.hotel_reservation.exception;
+package com.fallt.hotel_reservation.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,8 +12,7 @@ import lombok.NoArgsConstructor;
 public class ExceptionResponse {
 
     private String error;
-
     private String errorDescription;
-
     private Long timestamp;
+
 }

@@ -3,7 +3,11 @@ package com.fallt.hotel_reservation.mapper;
 import com.fallt.hotel_reservation.dto.request.UpsertUserRequest;
 import com.fallt.hotel_reservation.dto.response.UserResponse;
 import com.fallt.hotel_reservation.entity.User;
-import org.mapstruct.*;
+import org.mapstruct.BeanMapping;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.NullValuePropertyMappingStrategy;
 
 import static org.mapstruct.factory.Mappers.getMapper;
 
@@ -21,4 +25,5 @@ public interface UserMapper {
     @Mapping(target = "id", ignore = true)
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     void updateUserFromDto(UpsertUserRequest request, @MappingTarget User user);
+
 }

@@ -16,4 +16,5 @@ public class HotelListResponse {
 
     @Builder.Default
     private List<HotelResponse> hotels = new ArrayList<>();
+
 }

@@ -29,4 +29,5 @@ public class UpsertHotelRequest {
 
     @Positive(message = "The distance to the hotel should be positive")
     private Integer distance;
+
 }

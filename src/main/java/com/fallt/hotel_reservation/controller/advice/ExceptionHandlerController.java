@@ -1,16 +1,18 @@
-package com.fallt.hotel_reservation.exception;
+package com.fallt.hotel_reservation.controller.advice;
 
+import com.fallt.hotel_reservation.exception.AlreadyExistException;
+import com.fallt.hotel_reservation.exception.EntityNotFoundException;
+import com.fallt.hotel_reservation.dto.response.ExceptionResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.Objects;
 
-@ControllerAdvice
+@RestControllerAdvice
 public class ExceptionHandlerController {
-
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<ExceptionResponse> handleEntityNotFoundException(Exception e) {

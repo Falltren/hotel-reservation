@@ -13,13 +13,11 @@ import lombok.NoArgsConstructor;
 public class RoomResponse {
 
     private String name;
-
     private String description;
-
     private Integer number;
-
     private Double price;
 
     @JsonProperty("max_people_count")
     private Integer maxPeopleCount;
+
 }

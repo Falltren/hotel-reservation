@@ -26,4 +26,5 @@ public interface BookingMapper {
     Booking toEntity(BookingRequest request);
 
     List<BookingResponse> toListResponse(List<Booking> bookingList);
+
 }

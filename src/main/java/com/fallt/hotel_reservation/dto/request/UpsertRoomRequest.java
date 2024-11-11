@@ -30,4 +30,5 @@ public class UpsertRoomRequest {
 
     @Positive(message = "Hotel id must be positive")
     private Long hotelId;
+
 }

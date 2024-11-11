@@ -18,7 +18,6 @@ import java.util.Optional;
 public class RoomService {
 
     private final RoomRepository roomRepository;
-
     private final HotelService hotelService;
 
     public RoomResponse getRoomById(Long id) {
@@ -50,4 +49,5 @@ public class RoomService {
         }
         return optionalRoom.get();
     }
+
 }

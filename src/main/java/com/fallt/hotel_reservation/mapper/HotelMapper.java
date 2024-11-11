@@ -4,7 +4,11 @@ import com.fallt.hotel_reservation.dto.response.HotelListResponse;
 import com.fallt.hotel_reservation.dto.response.HotelResponse;
 import com.fallt.hotel_reservation.dto.request.UpsertHotelRequest;
 import com.fallt.hotel_reservation.entity.Hotel;
-import org.mapstruct.*;
+import org.mapstruct.BeanMapping;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.NullValuePropertyMappingStrategy;
 
 import java.util.List;
 
@@ -36,4 +40,5 @@ public interface HotelMapper {
         response.setHotels(toListResponse(hotels));
         return response;
     }
+
 }

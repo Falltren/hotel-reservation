@@ -19,11 +19,8 @@ import java.util.List;
 public class BookingService {
 
     private final BookingRepository bookingRepository;
-
     private final UnavailableDateService unavailableDateService;
-
     private final RoomService roomService;
-
     private final UserRepository userRepository;
 
     public List<BookingResponse> getAllBookings() {
@@ -40,4 +37,5 @@ public class BookingService {
         unavailableDateService.addUnavailableDate(booking);
         return BookingMapper.INSTANCE.toResponse(bookingRepository.save(booking));
     }
+
 }

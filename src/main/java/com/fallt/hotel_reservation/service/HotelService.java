@@ -1,8 +1,8 @@
 package com.fallt.hotel_reservation.service;
 
+import com.fallt.hotel_reservation.dto.request.UpsertHotelRequest;
 import com.fallt.hotel_reservation.dto.response.HotelListResponse;
 import com.fallt.hotel_reservation.dto.response.HotelResponse;
-import com.fallt.hotel_reservation.dto.request.UpsertHotelRequest;
 import com.fallt.hotel_reservation.entity.Hotel;
 import com.fallt.hotel_reservation.exception.EntityNotFoundException;
 import com.fallt.hotel_reservation.mapper.HotelMapper;
@@ -18,7 +18,6 @@ import java.util.Optional;
 public class HotelService {
 
     private final HotelRepository hotelRepository;
-
 
     public HotelResponse getById(Long id) {
         Hotel hotel = getHotelById(id);
@@ -51,4 +50,5 @@ public class HotelService {
         }
         return optionalHotel.get();
     }
+
 }
