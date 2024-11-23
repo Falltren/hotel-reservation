@@ -17,7 +17,6 @@ public class ExceptionHandlerController {
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<ExceptionResponse> handleEntityNotFoundException(Exception e) {
         ExceptionResponse body = ExceptionResponse.builder()
-                .error("NOT FOUND")
                 .timestamp(System.currentTimeMillis())
                 .errorDescription(e.getMessage())
                 .build();
@@ -28,7 +27,6 @@ public class ExceptionHandlerController {
     @ExceptionHandler(AlreadyExistException.class)
     public ResponseEntity<ExceptionResponse> handleAlreadyExistException(Exception e) {
         ExceptionResponse body = ExceptionResponse.builder()
-                .error("BAD REQUEST")
                 .timestamp(System.currentTimeMillis())
                 .errorDescription(e.getMessage())
                 .build();
@@ -40,7 +38,6 @@ public class ExceptionHandlerController {
     public ResponseEntity<ExceptionResponse> handleValidationException(MethodArgumentNotValidException ex) {
         String cause = Objects.requireNonNull(ex.getBindingResult().getFieldError()).getDefaultMessage();
         ExceptionResponse body = ExceptionResponse.builder()
-                .error("BAD REQUEST")
                 .timestamp(System.currentTimeMillis())
                 .errorDescription(cause)
                 .build();

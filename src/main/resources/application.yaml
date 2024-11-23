@@ -8,3 +8,8 @@ spring:
   liquibase:
     enabled: on
     change-log: classpath:/db/changelog/db.changelog-master.xml
+
+app:
+  jwt:
+    secret: someSecretKey
+    tokenExpiration: 5m

@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ExceptionResponse {
 
-    private String error;
     private String errorDescription;
     private Long timestamp;
 
