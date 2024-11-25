@@ -8,6 +8,7 @@ import com.fallt.hotel_reservation.exception.EntityNotFoundException;
 import com.fallt.hotel_reservation.mapper.UserMapper;
 import com.fallt.hotel_reservation.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.MessageFormat;
@@ -18,6 +19,7 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public UserResponse getUserById(Long id) {
         User user = getUser(id);
@@ -32,6 +34,7 @@ public class UserService {
             throw new AlreadyExistException(MessageFormat.format("User with email: {0} already exists", request.getEmail()));
         }
         User user = UserMapper.INSTANCE.toEntity(request);
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
         return UserMapper.INSTANCE.toResponse(userRepository.save(user));
     }
 
